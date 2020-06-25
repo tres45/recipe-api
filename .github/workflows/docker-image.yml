@@ -19,4 +19,4 @@ jobs:
         remote_host: ssh://root@vps-34225.vps-default-host.net
         ssh_private_key: ${{ secrets.PRIVATE_KEY }}
         ssh_public_key: ${{ secrets.PUBLIC_KEY }}
-        args: stack deploy --compose-file /root/docker-compose.yaml webapp
+        args: stack deploy --compose-file docker-compose.yaml webapp
