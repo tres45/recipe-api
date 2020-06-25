@@ -1,0 +1,5 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: osad4iy91/webapp-nginx:0.0.1
