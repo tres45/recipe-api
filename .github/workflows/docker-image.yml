@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to swarm
+    - uses: pldin601/docker-swarm-deploy-action@v2
+      with:
+        remote_host: ssh://root@vps-34225.vps-default-host.net
+        ssh_private_key: ${{ secrets.PRIVATE_KEY }}
+        ssh_public_key: ${{ secrets.PUBLIC_KEY }}
+        args: stack deploy --compose-file /root/docker-compose.yaml webapp
